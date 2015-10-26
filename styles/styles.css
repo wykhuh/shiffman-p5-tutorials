@@ -1,0 +1,16 @@
+#content {
+  float: left;
+  width: 600px;
+}
+
+ol {
+  margin-left: 620px;
+}
+
+li:hover, li.current {
+  background: #ddd;
+}
+
+body {
+  margin: 1em;
+}
