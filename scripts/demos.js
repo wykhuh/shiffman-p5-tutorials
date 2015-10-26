@@ -1,5 +1,6 @@
 var Demos = (function() {
   var examples;
+  var host = window.location.host;
 
   examples = [
     { name: "1.1-basics",
@@ -128,14 +129,18 @@ var Demos = (function() {
     return "<a href='#'>" + folder + "</a>";
   }
 
-  function createUrl(folder) {
-    var host = window.location.host;
+  function createIndexUrl(folder) {
     return 'http://' + host + '/' + folder + '/index.html';
+  }
+
+  function createSourceUrl(folder) {
+    return 'http://' + host + '/' + folder + '/sketch.js';
   }
 
   return {
     createLink: createLink,
-    createUrl: createUrl,
+    createIndexUrl: createIndexUrl,
+    createSourceUrl: createSourceUrl,
     examples: examples
   }
 }());

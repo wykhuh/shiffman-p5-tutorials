@@ -32,7 +32,7 @@ var App = function(p5js) {
     return p5js.select('#demo-frame')
       .attribute('width', '600px')
       .attribute('height', '400px')
-      .attribute('src',  Demos.createUrl(initialExample.name));
+      .attribute('src',  Demos.createIndexUrl(initialExample.name));
   }
 
   function setExampleText(example) {
@@ -41,11 +41,14 @@ var App = function(p5js) {
 
     p5js.select('#instructions')
       .html(example.instructions);
+
+      p5js.select('#source')
+        .html('<a href="' + Demos.createSourceUrl(example.name)+ '">Source</a>');
   }
 
   function updateExample() {
     highlightMenu(this);
-    iframe.attribute('src', Demos.createUrl(this.elt.innerHTML));
+    iframe.attribute('src', Demos.createIndexUrl(this.elt.innerHTML));
     setExampleText(findExample(this.elt.innerHTML));
   }
 
