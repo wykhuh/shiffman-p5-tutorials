@@ -1,6 +1,7 @@
 var Demos = (function() {
   var examples;
-  var host = window.location.href;
+  var baseUrl = window.location.href;
+  var iframe;
 
   examples = [
     { name: "1.1-basics",
@@ -125,22 +126,31 @@ var Demos = (function() {
       instructions: "click button to create li"}
   ];
 
-  function createLink (folder) {
-    return "<a href='#'>" + folder + "</a>";
+  // plain js functions
+
+  function createLink (exampleName) {
+    return "<a href='#'>" + exampleName + "</a>";
   }
 
-  function createIndexUrl(folder) {
-    return host + folder + '/index.html';
+  function createIndexUrl(exampleName) {
+    return baseUrl + exampleName + '/index.html';
   }
 
-  function createSourceUrl(folder) {
-    return  host + folder + '/sketch.js';
+  function createSourceUrl(exampleName) {
+    return  baseUrl + exampleName + '/sketch.js';
   }
+
+  function findExample(text) {
+    return examples.filter(function(example) {
+      return example.name == text;
+    })[0];
+  };
 
   return {
     createLink: createLink,
     createIndexUrl: createIndexUrl,
     createSourceUrl: createSourceUrl,
-    examples: examples
+    examples: examples,
+    findExample: findExample
   }
 }());

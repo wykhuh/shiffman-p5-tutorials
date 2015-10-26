@@ -49,7 +49,7 @@ var App = function(p5js) {
   function updateExample() {
     highlightMenu(this);
     iframe.attribute('src', Demos.createIndexUrl(this.elt.innerHTML));
-    setExampleText(findExample(this.elt.innerHTML));
+    setExampleText(Demos.findExample(this.elt.innerHTML));
   }
 
   function highlightMenu(menuItem){
@@ -59,12 +59,6 @@ var App = function(p5js) {
     }
     menuItem.attribute('class', 'current');
   }
-
-  function findExample(text) {
-    return Demos.examples.filter(function(example) {
-      return example.name == text;
-    })[0];
-  };
 };
 
 new p5(App);
