@@ -1,6 +1,6 @@
 var Demos = (function() {
   var examples;
-  var host = window.location.host;
+  var host = window.location.href;
 
   examples = [
     { name: "1.1-basics",
@@ -130,11 +130,11 @@ var Demos = (function() {
   }
 
   function createIndexUrl(folder) {
-    return 'http://' + host + '/' + folder + '/index.html';
+    return host + folder + '/index.html';
   }
 
   function createSourceUrl(folder) {
-    return 'http://' + host + '/' + folder + '/sketch.js';
+    return  host + folder + '/sketch.js';
   }
 
   return {
