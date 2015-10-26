@@ -1,5 +1,5 @@
-var App = (function() {
-  var examples, links;
+var Demos = (function() {
+  var examples;
 
   examples = [
     { name: "1.1-basics",
@@ -139,67 +139,3 @@ var App = (function() {
     examples: examples
   }
 }());
-
-var iframe;
-
-function setup () {
-  noCanvas();
-
-  createMenu();
-  highlightMenu(select('li'))
-
-  initialize(App.examples[0]);
-
-  var items = selectAll('li');
-  for (var i = 0; i < items.length; i++) {
-    items[i].mouseClicked(updateExample);
-  }
-}
-
-function initialize(initialExample){
-  iframe = createIframe();
-  iframe.attribute('src',  App.createUrl(initialExample.name));
-
-  setExampleText(initialExample);
-}
-
-function createMenu() {
-  App.examples.forEach(function (example) {
-    createElement("li", example.name)
-      .parent("links");
-  });
-}
-
-function createIframe() {
-  return select('#demo-frame')
-    .attribute('width', '600px')
-    .attribute('height', '400px');
-}
-
-function setExampleText(example) {
-  select('#description')
-    .html(example.description);
-
-  select('#instructions')
-    .html(example.instructions);
-}
-
-function updateExample() {
-  highlightMenu(this);
-  iframe.attribute('src', App.createUrl(this.elt.innerHTML));
-  setExampleText(findExample(this.elt.innerHTML));
-}
-
-function highlightMenu(menuItem){
-  var current = document.querySelector('li.current')
-  if(current){
-    current.removeAttribute('class');
-  }
-  menuItem.attribute('class', 'current');
-}
-
-function findExample(text) {
-  return App.examples.filter(function(example) {
-    return example.name == text;
-  })[0];
-};
