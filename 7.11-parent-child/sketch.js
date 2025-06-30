@@ -1,8 +1,8 @@
 function setup() {
-  var canvas = createCanvas(300, 250);
+  var canvas = createCanvas(400, 250);
   // use parent() to attach canvas as a child to a particular DOM element
   // parent() assumes the selector is an #id
-  canvas.parent('canvasp');
+  canvas.parent("canvasp");
 }
 
 // attach canvas to a particular paragraph
