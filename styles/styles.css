@@ -1,16 +1,24 @@
-#content {
-  float: left;
-  width: 600px;
-}
-
-ol {
-  margin-left: 620px;
-}
-
-li:hover, li.current {
-  background: #ddd;
-}
-
 body {
   margin: 1em;
+}
+
+#wrapper {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+}
+
+#menu ol {
+  /* list-style: none; */
+}
+
+#menu li {
+  margin-bottom: 0.5rem;
+}
+#menu li:hover,
+#menu li.current {
+  background: #ddd;
+}
+#menu {
+  height: 80vh;
+  overflow-y: scroll;
 }

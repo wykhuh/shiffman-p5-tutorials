@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Daniel Shiffman p5.js tutorials</title>
-  <link rel="stylesheet" href="./styles/normalize.css">
-  <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
-  <h1>Daniel Shiffman p5.js tutorials</h1>
-  <p>Here are the code example for Daniel Shiffman <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">p5.js tutorials</a>.
-    Sometimes my code slightly differs from the examples shown in tutorials. <a href="https://github.com/wykhuh/shiffman-p5-tutorials">Github repo</a></p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daniel Shiffman p5.js tutorials</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <h1>Daniel Shiffman p5.js tutorials</h1>
+    <p>
+      Here are the code example for Daniel Shiffman
+      <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw"
+        >p5.js tutorials</a
+      >. Sometimes my code slightly differs from the examples shown in
+      tutorials.
+      <a href="https://github.com/wykhuh/shiffman-p5-tutorials">Github repo</a>
+    </p>
 
-  <div id="content">
-    <iframe id="demo-frame" src=""></iframe>
-    <p id="description"></p>
-    <p id="instructions"></p>
-    <p id="source"></p>
-  </div>
+    <div id="wrapper">
+      <div id="demo">
+        <iframe id="demo-frame" src=""></iframe>
+        <h2 id="title"></h2>
+        <p id="description"></p>
+        <div id="instructions"></div>
+        <h2>Links</h2>
+        <p id="youtube-link"></p>
+        <p id="source"></p>
+      </div>
 
-  <ol id="links"></ol>
+      <div id="menu">
+        <ol id="links"></ol>
+      </div>
+    </div>
 
-  <script src="./libraries/p5.js"></script>
-  <script src="./libraries/p5.dom.js"></script>
-  <script src="./scripts/demos.js"></script>
-  <script src="./scripts/app.js"></script>
-</body>
+    <script src="./scripts/libraries/p5.js"></script>
+    <script src="./scripts/libraries/p5.dom.js"></script>
+    <script src="./scripts/demos.js"></script>
+    <script src="./scripts/app.js"></script>
+  </body>
 </html>
